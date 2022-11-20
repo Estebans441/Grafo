@@ -13,28 +13,28 @@ int * Dijkstra(Grafo<int, int> grafo, int v, vector<vector<int>> &caminos);
 int siguienteVertice(Grafo<int, int> &grafo, int costos[], int nv);
 
 int main() {
-  Grafo<int, float> grafo(false, true);
-  grafo.agregarVertice(1);
-  grafo.agregarVertice(2);
-  grafo.agregarVertice(3);
-  grafo.agregarVertice(4);
-  grafo.agregarVertice(5);
-  grafo.agregarVertice(6);
+  Grafo<string, float> grafo(false, true);
+  grafo.agregarVertice("Hola");
+  grafo.agregarVertice("su");
+  grafo.agregarVertice("Majestad");
+  grafo.agregarVertice("El");
+  grafo.agregarVertice("Rey");
+  grafo.agregarVertice("Carlos");
 
-  grafo.agregarArista(1, 2, 200);
-  grafo.agregarArista(1, 3, 1);
-  grafo.agregarArista(6, 1, 1);
-  grafo.agregarArista(2, 4, 1);
-  grafo.agregarArista(3, 1, 1);
-  grafo.agregarArista(3, 4, 200);
-  grafo.agregarArista(4, 2, 200);
-  grafo.agregarArista(6, 5, 1);
-  grafo.agregarArista(5, 2, 20.3);
+  grafo.agregarArista("Hola", "su", 200);
+  grafo.agregarArista("Hola", "Majestad", 1);
+  grafo.agregarArista("Carlos", "Hola", 1);
+  grafo.agregarArista("su", "El", 1);
+  grafo.agregarArista("Majestad", "Hola", 1);
+  grafo.agregarArista("Majestad", "El", 200);
+  grafo.agregarArista("El", "su", 200);
+  grafo.agregarArista("Carlos", "Rey", 1);
+  grafo.agregarArista("Rey", "su", 20.3);
   
-  vector<vector<int>> caminos;
-  float * dijkstra = grafo.Dijkstra(1, caminos);
+  vector<vector<string>> caminos;
+  float * dijkstra = grafo.Dijkstra(0, caminos);
   cout << "----------------------------" << endl;
-  cout << "Dijkstra desde " << grafo.getValorVertice(1) << ": " << endl;
+  cout << "Dijkstra desde " << grafo.getValorVertice(0) << ": " << endl;
   cout << "----------------------------" << endl;
   for(int i = 0 ; i < grafo.ordenGrafo() ; i++){
     cout << "Destino: " << grafo.getValorVertice(i) << endl;

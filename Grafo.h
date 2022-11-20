@@ -29,7 +29,7 @@ public:
   void setDirigido(bool dirigido);
   bool isPonderado() const;
   void setPonderado(bool ponderado);
-  int getValorVertice(int i);
+  V getValorVertice(int i);
   std::vector<V> getSucesores(int vertice);
   std::vector<Arista<int, int>*> &getAristasVertice(int i);
   int ordenGrafo();

@@ -61,7 +61,7 @@ void Grafo<V, A>::setPonderado(bool ponderado) {
 }
 
 template<class V, class A>
-int Grafo<V, A>::getValorVertice(int i){
+V Grafo<V, A>::getValorVertice(int i){
   return vertices[i].getValor();
 }
 
